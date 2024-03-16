@@ -1,0 +1,15 @@
+<clr-datagrid>
+  <clr-dg-column>Symbol</clr-dg-column>
+  <clr-dg-column>Last Price</clr-dg-column>
+  <clr-dg-column>Tag</clr-dg-column>
+  <clr-dg-column>Actions</clr-dg-column>
+
+  <clr-dg-row *ngFor="let stock of stocks">
+    <clr-dg-cell>{{ stock.symbol }}</clr-dg-cell>
+    <clr-dg-cell>{{ stock.last_price }}</clr-dg-cell>
+    <clr-dg-cell>{{ stock.tag }}</clr-dg-cell>
+    <clr-dg-cell><span>X</span></clr-dg-cell>
+  </clr-dg-row>
+
+  <clr-dg-footer>{{ stocks.length }} stocks</clr-dg-footer>
+</clr-datagrid>
