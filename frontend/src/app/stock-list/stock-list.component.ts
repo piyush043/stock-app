@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StockService } from '../stock.service';
 
 @Component({
   selector: 'stock-list',
@@ -6,12 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./stock-list.component.css']
 })
 export class StockListComponent {
+  constructor(private stockService: StockService) {}
 
-  stocks = [
-    {'id': 1, 'name': 'Apple', 'symbol': 'APPL', 'last_price': '185.00', 'market_cap': '', 'tag': ''},
-    {'id': 2, 'name': 'Google', 'symbol': 'GOOG', 'last_price': '142.00', 'market_cap': '', 'tag': ''},
-    {'id': 3, 'name': 'Broadcom', 'symbol': 'AVGO', 'last_price': '1280.31', 'market_cap': '', 'tag': ''},
-    {'id': 4, 'name': 'Meta', 'symbol': 'META', 'last_price': '453.21', 'market_cap': '', 'tag': ''},
-  ];
+  stocks = this.stockService.getAllStocks();
 
 }

@@ -7,6 +7,7 @@ import { AppHeaderComponent } from './app-header/app-header.component';
 import { StockListComponent } from './stock-list/stock-list.component';
 import { StockFilterComponent } from './stock-filter/stock-filter.component';
 import { StockDetailComponent } from './stock-detail/stock-detail.component';
+import { StockService } from './stock.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { StockDetailComponent } from './stock-detail/stock-detail.component';
     BrowserModule,
     ClarityModule
   ],
-  providers: [],
+  providers: [StockService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
