@@ -35,4 +35,32 @@ function jsonWriter(filePath, newData) {
 }
 
 
+// API to read and return stocks data from stocks.json
+stockRoutes.get('/stocks', (req, res) => {
+  jsonReader(filePath, (err, data) => {
+    if (err) {
+      console.log(err);
+      throw err;
+    }
+    res.send(data);
+  });
+});
+
+// API to return unique tags used for filtering stocks on UI
+stockRoutes.get('/tags', (req, res) => {
+  jsonReader(filePath, (err, data) => {
+    if (err) {
+      console.log(err);
+      throw err;
+    } else {
+      let tags = data.map((obj) => {
+        return obj.tag.toLowerCase();
+      });
+      let uniqueTags = new Set(tags);
+      console.log(uniqueTags);
+      res.send([...uniqueTags]);
+    }
+  });
+});
+
 module.exports = stockRoutes;
