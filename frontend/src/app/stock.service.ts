@@ -10,6 +10,29 @@ export class StockService {
   
   constructor(private http: HttpClient) {}
 
+  private subjectStockDeleted: Subject<number> = new Subject<number>();
+  private subjectReset: Subject<boolean> = new Subject<boolean>();
+
+  // `callStockDeleted` method can be subscribed to observe changes in `subjectStockDeleted`
+  callStockDeleted(): Observable<number> {
+    return this.subjectStockDeleted.asObservable();
+  }
+  
+  // Emitting stockId as `val` of deleted stock, which multicasts `val` to all subscribers
+  setSubjectStockDeleted(val:number) {
+    this.subjectStockDeleted.next(val);
+  }
+  
+  // `callResetData` method can be subscribed to observe changes in `subjectReset`
+  callResetData(): Observable<boolean> {
+    return this.subjectReset.asObservable();
+  }
+  
+  // Multicasting reset value as `val` to all subscribers
+  setSubjectResetData(val:boolean) {
+    this.subjectReset.next(val);
+  }
+
   // API call to fetch all stocks from server
   getStocks(): Observable<Stock[]> {
     return this.http.get<Stock[]>('/api/stocks');
