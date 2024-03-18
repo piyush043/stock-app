@@ -1,1 +1,13 @@
-<h6>Tag Filter</h6>
+<div class="align-right">
+  <clr-dropdown>
+    <button class="btn btn-outline-primary" clrDropdownTrigger>
+      Filter
+      <cds-icon shape="angle" direction="down"></cds-icon>
+    </button>
+    <clr-dropdown-menu clrPosition="bottom-right" *clrIfOpen>
+      <div aria-label="Dropdown header Action 1" clrDropdownItem (click)="updateFilter('')">All</div>
+      <div class="dropdown-divider" role="separator" aria-hidden="true"></div>
+      <div clrDropdownItem *ngFor="let tag of filters" (click)="updateFilter(tag)">{{tag}}</div>
+    </clr-dropdown-menu>
+  </clr-dropdown>
+</div>

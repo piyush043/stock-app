@@ -21,6 +21,12 @@ export class StockListComponent implements OnInit{
   ngOnInit() {
     this.getAllStocks();
     
+    // Subscribe to fitler changed event emitter
+    this.stockService.stockFilterClicked.subscribe({
+      next: (res:string) => { this.currFilter = res},
+      err: (err) => console.error(err)
+    });
+
   }
 
   getAllStocks (): void {
