@@ -1,0 +1,354 @@
+[
+  {
+    "id": 1,
+    "name": "Apple",
+    "symbol": "APPL",
+    "last_price": 185,
+    "market_cap": 321132134,
+    "tag": "favorite"
+  },
+  {
+    "id": 2,
+    "name": "Google",
+    "symbol": "GOOG",
+    "last_price": 142,
+    "market_cap": 513242134,
+    "tag": "watching"
+  },
+  {
+    "id": 3,
+    "name": "Broadcom",
+    "symbol": "AVGO",
+    "last_price": 1280.31,
+    "market_cap": 134123423,
+    "tag": "forFriends"
+  },
+  {
+    "id": 4,
+    "name": "Meta",
+    "symbol": "META",
+    "last_price": 453.21,
+    "market_cap": 312423142,
+    "tag": "watching"
+  },
+  {
+    "id": 5,
+    "name": "Microsoft",
+    "symbol": "MSFT",
+    "last_price": 185,
+    "market_cap": 321132134,
+    "tag": "favorite"
+  },
+  {
+    "id": 6,
+    "name": "Nvidia",
+    "symbol": "NVDA",
+    "last_price": 142,
+    "market_cap": 513242134,
+    "tag": "watching"
+  },
+  {
+    "id": 7,
+    "name": "JP Morgan",
+    "symbol": "JPMC",
+    "last_price": 1280.31,
+    "market_cap": 134123423,
+    "tag": "forFriends"
+  },
+  {
+    "id": 8,
+    "name": "Tesla",
+    "symbol": "TSLA",
+    "last_price": 453.21,
+    "market_cap": 312423142,
+    "tag": "watching"
+  },
+  {
+    "id": 9,
+    "name": "Costco",
+    "symbol": "COST",
+    "last_price": 185,
+    "market_cap": 321132134,
+    "tag": "favorite"
+  },
+  {
+    "id": 10,
+    "name": "Advance Micro Devices",
+    "symbol": "AMD",
+    "last_price": 142,
+    "market_cap": 513242134,
+    "tag": "watching"
+  },
+  {
+    "id": 11,
+    "name": "Coca-Cola",
+    "symbol": "KO",
+    "last_price": 1280.31,
+    "market_cap": 134123423,
+    "tag": "forFriends"
+  },
+  {
+    "id": 12,
+    "name": "Meta",
+    "symbol": "META",
+    "last_price": 453.21,
+    "market_cap": 312423142,
+    "tag": "watching"
+  },
+  {
+    "id": 13,
+    "name": "Intuit Inc",
+    "symbol": "INTU",
+    "last_price": 1280.31,
+    "market_cap": 134123423,
+    "tag": "forFriends"
+  },
+  {
+    "id": 14,
+    "name": "Intel Corp",
+    "symbol": "INTC",
+    "last_price": 453.21,
+    "market_cap": 312423142,
+    "tag": "watching"
+  },
+  {
+    "id": 15,
+    "name": "Pepsico, Inc.",
+    "symbol": "PEP",
+    "last_price": 185,
+    "market_cap": 321132134,
+    "tag": "favorite"
+  },
+  {
+    "id": 16,
+    "name": "Adobe Inc.",
+    "symbol": "ADBE",
+    "last_price": 185,
+    "market_cap": 321132134,
+    "tag": "favorite"
+  },
+  {
+    "id": 17,
+    "name": "Salesforce",
+    "symbol": "CRM",
+    "last_price": 142,
+    "market_cap": 513242134,
+    "tag": "watching"
+  },
+  {
+    "id": 18,
+    "name": "Nike",
+    "symbol": "NKE",
+    "last_price": 1280.31,
+    "market_cap": 134123423,
+    "tag": "forFriends"
+  },
+  {
+    "id": 19,
+    "name": "Puma",
+    "symbol": "PMA",
+    "last_price": 453.21,
+    "market_cap": 312423142,
+    "tag": "watching"
+  },
+  {
+    "id": 20,
+    "name": "Citigroup",
+    "symbol": "C",
+    "last_price": 142,
+    "market_cap": 513242134,
+    "tag": "watching"
+  },
+  {
+    "id": 21,
+    "name": "Cigna",
+    "symbol": "CI",
+    "last_price": 1280.31,
+    "market_cap": 134123423,
+    "tag": "forFriends"
+  },
+  {
+    "id": 22,
+    "name": "CVS Health",
+    "symbol": "CVS",
+    "last_price": 453.21,
+    "market_cap": 312423142,
+    "tag": "watching"
+  },
+  {
+    "name": "3M",
+    "tag": "watching",
+    "id": 44,
+    "market_cap": 56.27,
+    "last_price": 95.85,
+    "symbol": "MMM"
+  },
+  {
+    "name": "Amazon.com",
+    "tag": "watching",
+    "id": 43,
+    "market_cap": 17.01,
+    "last_price": 93.43,
+    "symbol": "AMZN"
+  },
+  {
+    "name": "Campbell Soup",
+    "tag": "watching",
+    "id": 42,
+    "market_cap": 22.27,
+    "last_price": 36.4,
+    "symbol": "CPB"
+  },
+  {
+    "name": "Disney",
+    "tag": "watching",
+    "id": 41,
+    "market_cap": 15.24,
+    "last_price": 35.47,
+    "symbol": "DIS"
+  },
+  {
+    "name": "Dow Chemical",
+    "tag": "watching",
+    "id": 40,
+    "market_cap": 27.65,
+    "last_price": 44.67,
+    "symbol": "DOW"
+  },
+  {
+    "name": "Exxon Mobil",
+    "tag": "watching",
+    "id": 39,
+    "market_cap": 32.82,
+    "last_price": 91.36,
+    "symbol": "XOM"
+  },
+  {
+    "name": "Ford",
+    "tag": "watching",
+    "id": 38,
+    "market_cap": 9.63,
+    "last_price": 8.37,
+    "symbol": "F"
+  },
+  {
+    "name": "The Gap",
+    "tag": "watching",
+    "id": 37,
+    "market_cap": 11.56,
+    "last_price": 18.9,
+    "symbol": "GPS"
+  },
+  {
+    "name": "General Mills",
+    "tag": "watching",
+    "id": 36,
+    "market_cap": 22.1,
+    "last_price": 28.76,
+    "symbol": "GIS"
+  },
+  {
+    "name": "Hewlett Packard",
+    "tag": "watching",
+    "id": 35,
+    "market_cap": 12.03,
+    "last_price": 50.9,
+    "symbol": "HPQ"
+  },
+  {
+    "name": "IBM",
+    "tag": "watching",
+    "id": 34,
+    "market_cap": 60.36,
+    "last_price": 116.3,
+    "symbol": "IBM"
+  },
+  {
+    "name": "Johnson & Johnson",
+    "tag": "watching",
+    "id": 33,
+    "market_cap": 52.3,
+    "last_price": 66.25,
+    "symbol": "JNJ"
+  },
+  {
+    "name": "Microsoft",
+    "tag": "watching",
+    "id": 32,
+    "market_cap": 22.62,
+    "last_price": 29.84,
+    "symbol": "MSFT"
+  },
+  {
+    "name": "Monsanto",
+    "tag": "watching",
+    "id": 31,
+    "market_cap": 7.2,
+    "last_price": 86.93,
+    "symbol": "MO"
+  },
+  {
+    "name": "PepsiCo",
+    "tag": "watching",
+    "id": 30,
+    "market_cap": 36.69,
+    "last_price": 73.74,
+    "symbol": "PEP"
+  },
+  {
+    "name": "Starbucks",
+    "tag": "watching",
+    "id": 29,
+    "market_cap": 10.5,
+    "last_price": 26.84,
+    "symbol": "SBUX"
+  },
+  {
+    "name": "Texas Instruments",
+    "tag": "watching",
+    "id": 28,
+    "market_cap": 15.58,
+    "last_price": 36.54,
+    "symbol": "TXN"
+  },
+  {
+    "name": "Time Warner",
+    "tag": "watching",
+    "id": 27,
+    "market_cap": 36.36,
+    "last_price": 57.18,
+    "symbol": "TWX"
+  },
+  {
+    "name": "United Health",
+    "tag": "watching",
+    "id": 26,
+    "market_cap": 21.85,
+    "last_price": 47.7,
+    "symbol": "UNH"
+  },
+  {
+    "name": "Walmart",
+    "tag": "watching",
+    "id": 25,
+    "market_cap": 50.51,
+    "last_price": 47.53,
+    "symbol": "WMT"
+  },
+  {
+    "name": "Whirlpool",
+    "tag": "watching",
+    "id": 24,
+    "market_cap": 46.82,
+    "last_price": 94.29,
+    "symbol": "WHR"
+  },
+  {
+    "name": "Xerox",
+    "tag": "watching",
+    "id": 23,
+    "market_cap": 5.26,
+    "last_price": 17.54,
+    "symbol": "XRX"
+  }
+]
