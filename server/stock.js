@@ -63,4 +63,32 @@ stockRoutes.get('/tags', (req, res) => {
   });
 });
 
+// API to delete stock from json with `id`
+stockRoutes.delete('/stocks/:id', (req, res) => {
+  // Check if id is not null
+  const id = req.params.id;
+  if (!id) {
+    return res.status(404);
+  }
+  // Read json file
+  jsonReader(filePath, (err, data) => {
+    if (err) {
+      console.error(err);
+      throw err;
+    } else {
+      // Find if json has 
+      let newData = data.filter(obj =>  obj.id != id);
+      if (data.length == newData.length) {
+        return res.status(404).send({
+          "msg": `Stock with ${id} not found!`
+        });
+      }
+      jsonWriter(filePath, newData);
+      res.status(200).send({
+        "msg": `Stock ${id} deleted!`
+      });
+    }
+  });
+});
+
 module.exports = stockRoutes;
