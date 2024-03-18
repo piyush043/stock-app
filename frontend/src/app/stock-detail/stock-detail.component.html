@@ -1,1 +1,44 @@
-<h3>Stock Detail</h3>
+<div *ngIf="stock" class="margin-top-30">
+  <div class="clr-row">
+    <div class="clr-col-8">
+      <span class="detail-header">Stock Detail</span>
+      <span class="label">{{stock.symbol}}</span>
+    </div>
+    <div class="clr-col-4 text-right">
+      <button class="btn btn-link btn-sm " (click)="close()">Close</button>
+    </div>
+  </div>
+  
+  <div class="clr-row">
+    <div class="clr-col-6">
+      <span class="detail-label">Symbol</span>
+    </div>
+    <div class="clr-col-6">
+      <span>{{stock.symbol}}</span>
+    </div>
+  </div>
+  <div class="clr-row">
+    <div class="clr-col-6">
+      <span class="detail-label">Name</span>
+    </div>
+    <div class="clr-col-6">
+      <span>{{stock.name}}</span>
+    </div>
+  </div>
+  <div class="clr-row">
+    <div class="clr-col-6">
+      <span class="detail-label">Market Cap</span>
+    </div>
+    <div class="clr-col-6">
+      <span>{{stock.market_cap | currency}}</span>
+    </div>
+  </div>
+  <div class="clr-row">
+    <div class="clr-col-6">
+      <span class="detail-label">Tag</span>
+    </div>
+    <div class="clr-col-6">
+      <span>{{stock.tag}}</span>
+    </div>
+  </div>
+</div>

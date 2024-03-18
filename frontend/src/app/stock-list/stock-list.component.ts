@@ -73,6 +73,7 @@ export class StockListComponent implements OnInit{
   }
 
   onShowStockDetails(stock: Stock): void {
+    this.stockService.showStockDetails(stock);
   }
 
 
