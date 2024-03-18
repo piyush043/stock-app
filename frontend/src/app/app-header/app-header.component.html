@@ -1,10 +1,23 @@
+<!-- Navigation header -->
 <header class="header-6">
   <div class="branding">
     <a href="" class="nav-link">
-      <cds-icon shape="line-chart"></cds-icon>
       <span class="title">{{title}}</span>
     </a>
   </div>
   <div class="header-actions">
+    <a class="nav-link nav-text" (click)="hideShowModal()">Reset</a>
   </div>
 </header>
+
+<!-- Modal to confirm reset data -->
+<clr-modal [(clrModalOpen)]="showModal">
+  <h3 class="modal-title">Reset App Data!</h3>
+  <div class="modal-body">
+    <p>Do you want to continue?</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline" (click)="hideShowModal()">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="resetAppData()">Ok</button>
+  </div>
+</clr-modal>
