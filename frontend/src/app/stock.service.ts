@@ -1,4 +1,6 @@
+import { EventEmitter, Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { Observable, Subject } from "rxjs";
 import { Stock } from "./interfaces";
 
 @Injectable({
@@ -29,3 +31,20 @@ export class StockService {
     return this.http.post('/api/reset', {});
   }
 
+  // Event Emiter used when stock is selected from table
+  stockDetailsClicked: EventEmitter<Stock> = new EventEmitter<Stock>();
+  
+  // Method to emit stock details when stock link is clicked
+  showStockDetails (stock: Stock) {
+    this.stockDetailsClicked.emit(stock);
+  }
+
+  // Event Emiter used when filters are changed from dropdown
+  stockFilterClicked: EventEmitter<String> = new EventEmitter<string>();
+  
+  // Method to emit filter details when filter is changed
+  stockFilterChanged (filterVal: string) {
+    this.stockFilterClicked.emit(filterVal);
+  }
+
+}
