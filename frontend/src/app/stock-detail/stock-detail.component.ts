@@ -24,7 +24,7 @@ export class StockDetailComponent implements OnInit{
     // Subscribe to Stock deleted Subject
     this.stockService.callStockDeleted().subscribe({
       next: (data:number) => {
-        if (data && this.stock.id == data){
+        if (data && this.stock && this.stock.id == data){
           this.close();
         }
       }

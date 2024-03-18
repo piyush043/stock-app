@@ -10,7 +10,16 @@ export class StockFilterComponent implements OnInit{
   constructor(private stockService:StockService){}
 
   filters: string[];
-  currFilter: string = '';
+  _currFilter: string = '';
+
+  get currFilter(): string{
+    return this._currFilter;
+  }
+
+  set currFilter(val: string) {
+    this._currFilter = val;
+    this.updateFilter();
+  }
 
   ngOnInit(): void {
     this.getFilters();
@@ -36,18 +45,22 @@ export class StockFilterComponent implements OnInit{
 
   getFilters() {
     this.stockService.getFilterTags().subscribe( {
-      next: (res) => {this.filters = res; console.log(res)},
+      next: (res) => {this.filters = res;},
       error: (err) => console.error("Error"),
       complete: () => {
         if (this.currFilter!='' && !this.filters.includes(this.currFilter)) {
-          this.updateFilter('');
+          this.resetFilter();
+          
         }
       }
     });
   }
 
-  updateFilter(val:string) {
-    this.currFilter = val;
+  resetFilter() {
+    this.currFilter = '';
+  }
+
+  updateFilter() {
     this.stockService.stockFilterClicked.emit(this.currFilter);
   }
 }

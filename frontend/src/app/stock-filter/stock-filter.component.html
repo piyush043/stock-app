@@ -1,13 +1,23 @@
-<div class="align-right">
-  <clr-dropdown>
-    <button class="btn btn-outline-primary" clrDropdownTrigger>
-      Filter
-      <cds-icon shape="angle" direction="down"></cds-icon>
-    </button>
-    <clr-dropdown-menu clrPosition="bottom-right" *clrIfOpen>
-      <div aria-label="Dropdown header Action 1" clrDropdownItem (click)="updateFilter('')">All</div>
-      <div class="dropdown-divider" role="separator" aria-hidden="true"></div>
-      <div clrDropdownItem *ngFor="let tag of filters" (click)="updateFilter(tag)">{{tag}}</div>
-    </clr-dropdown-menu>
-  </clr-dropdown>
+<div class="clr-row">
+  <div class="clr-col-4">
+    <clr-combobox-container class="no-margin-top">
+      <label>Filter</label>
+      <clr-combobox [(ngModel)]="currFilter" name="myState" required>
+        <clr-options>
+          <clr-option [clrValue]="''">All</clr-option>
+          <clr-option *clrOptionItems="let tag of filters" [clrValue]="tag">
+            {{ tag }}
+          </clr-option>
+        </clr-options>
+      </clr-combobox>
+    </clr-combobox-container>
+  </div>
+
+  <div class="clr-col-4"></div>
+
+  <div *ngIf="currFilter!=''" class="clr-col-4 align-right">
+    <span class="label filter-tag">{{currFilter}}
+      <cds-icon shape="close" (click)="resetFilter()"></cds-icon>
+    </span>
+  </div> 
 </div>
