@@ -27,6 +27,23 @@ export class StockListComponent implements OnInit{
       err: (err) => console.error(err)
     });
 
+    // Subscribe to Stock deleted Subject
+    this.stockService.callStockDeleted().subscribe({
+      next: (data:number) => {
+        if (data) {
+          this.stocks = this.stocks.filter(stock => stock.id != data);
+        }
+      }
+    });
+
+    // Subscribe to Reset Data Subject
+    this.stockService.callResetData().subscribe({
+      next: (data:boolean) => {
+        if (data){
+          this.getAllStocks();
+        }
+      }
+    });
   }
 
   getAllStocks (): void {
@@ -46,6 +63,7 @@ export class StockListComponent implements OnInit{
       next: (res) => {
         this.alertText = res["msg"];
         this.alertType = "success";
+        this.stockService.setSubjectStockDeleted(stockId);
       }, 
       error: (error) => {
         this.alertText = error.error["msg"];

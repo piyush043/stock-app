@@ -21,6 +21,23 @@ export class StockDetailComponent implements OnInit{
       err: (err) => console.error(err)
     });
 
+    // Subscribe to Stock deleted Subject
+    this.stockService.callStockDeleted().subscribe({
+      next: (data:number) => {
+        if (data && this.stock.id == data){
+          this.close();
+        }
+      }
+    });
+
+    // Subscribe to Reset Data Subject
+    this.stockService.callResetData().subscribe({
+      next: (data:boolean) => {
+        if (data){
+          this.close();
+        }
+      }
+    });
   }
 
   close() {

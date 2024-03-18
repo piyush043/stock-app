@@ -14,6 +14,24 @@ export class StockFilterComponent implements OnInit{
 
   ngOnInit(): void {
     this.getFilters();
+    
+    // Subscribe to Stock deleted Subject
+    this.stockService.callStockDeleted().subscribe({
+      next: (data:number) => {
+        if (data){
+          this.getFilters();
+        }
+      }
+    });
+
+    // Subscribe to Reset Data Subject
+    this.stockService.callResetData().subscribe({
+      next: (data:boolean) => {
+        if (data){
+          this.getFilters();
+        }
+      }
+    });
   }
 
   getFilters() {
