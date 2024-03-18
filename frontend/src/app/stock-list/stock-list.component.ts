@@ -94,5 +94,9 @@ export class StockListComponent implements OnInit{
     this.stockService.showStockDetails(stock);
   }
 
+  scroll(el: HTMLElement) {
+    el.scrollIntoView({behavior: 'smooth'});
+  }
+
 
 }

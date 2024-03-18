@@ -24,7 +24,7 @@
   <clr-dg-row *clrDgItems="let stock of stocks">
     <clr-dg-cell>
       <button class="btn btn-link btn-sm no-padding"
-              (click)="onShowStockDetails(stock)">{{ stock.symbol }}</button>
+              (click)="onShowStockDetails(stock); scroll(target)">{{ stock.symbol }}</button>
     </clr-dg-cell>
     <clr-dg-cell class="center-align">${{ stock.last_price | number:'1.2-2' }}</clr-dg-cell>
     <clr-dg-cell class="center-align">{{ stock.tag }}</clr-dg-cell>
@@ -45,3 +45,5 @@
     </clr-dg-pagination>
   </clr-dg-footer>
 </clr-datagrid>
+
+<div #target></div>
