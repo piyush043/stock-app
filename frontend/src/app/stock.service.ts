@@ -1,11 +1,3 @@
-interface Stock {
-  id: number,
-  name: string,
-  symbol: string,
-  last_price: number,
-  market_cap: number,
-  tag: string
-}
 
 export class StockService {
   
