@@ -1,15 +1,48 @@
-<clr-datagrid>
-  <clr-dg-column>Symbol</clr-dg-column>
-  <clr-dg-column>Last Price</clr-dg-column>
-  <clr-dg-column>Tag</clr-dg-column>
+
+<!-- Alert  -->
+<div class="alert alert-sm" [ngClass]="'alert-' + alertType" role="alert" *ngIf="alertText">
+  <div class="alert-items">
+    <div class="alert-item static">
+      <div class="alert-icon-wrapper">
+        <cds-icon class="alert-icon" shape="check-circle"></cds-icon>
+      </div>
+      <span class="alert-text">{{alertText}}</span>
+    </div>
+  </div>
+  <button type="button" class="close" aria-label="Close" (click)="onCloseAlert()">
+    <cds-icon aria-hidden="true" shape="close"></cds-icon>
+  </button>
+</div>
+
+<!-- List of stocks -->
+<clr-datagrid class="stock-list">
+  <clr-dg-column [clrDgField]="'symbol'" [clrDgSortOrder]="ascSort">Symbol</clr-dg-column>
+  <clr-dg-column [clrDgField]="'last_price'">Last Price</clr-dg-column>
+  <clr-dg-column [clrDgField]="'tag'" [(clrFilterValue)]="currFilter">Tag</clr-dg-column>
   <clr-dg-column>Actions</clr-dg-column>
 
-  <clr-dg-row *ngFor="let stock of stocks">
-    <clr-dg-cell>{{ stock.symbol }}</clr-dg-cell>
-    <clr-dg-cell>{{ stock.last_price }}</clr-dg-cell>
-    <clr-dg-cell>{{ stock.tag }}</clr-dg-cell>
-    <clr-dg-cell><span>X</span></clr-dg-cell>
+  <clr-dg-row *clrDgItems="let stock of stocks">
+    <clr-dg-cell>
+      <button class="btn btn-link btn-sm no-padding"
+              (click)="onShowStockDetails(stock)">{{ stock.symbol }}</button>
+    </clr-dg-cell>
+    <clr-dg-cell class="center-align">${{ stock.last_price | number:'1.2-2' }}</clr-dg-cell>
+    <clr-dg-cell class="center-align">{{ stock.tag }}</clr-dg-cell>
+    <clr-dg-cell>
+      <button class="btn btn-link btn-sm no-padding" 
+              (mouseover)="onMouseOverDelete(stock)" 
+              (mouseleave)="onMouseLeaveDelete(stock)"
+              (click)="deleteStock(stock)">
+              <span *ngIf="stock.selected">X</span>
+            </button>
+    </clr-dg-cell>
   </clr-dg-row>
 
-  <clr-dg-footer>{{ stocks.length }} stocks</clr-dg-footer>
+  <clr-dg-footer>
+    <clr-dg-pagination #pagination [clrDgPageSize]="10">
+      <clr-dg-page-size [clrPageSizeOptions]="[10, 20, 50, 100]">Stocks per page</clr-dg-page-size>
+      {{ stocks.length }} stocks
+    </clr-dg-pagination>
+  </clr-dg-footer>
 </clr-datagrid>
+  
