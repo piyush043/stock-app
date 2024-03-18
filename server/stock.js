@@ -91,4 +91,20 @@ stockRoutes.delete('/stocks/:id', (req, res) => {
   });
 });
 
+// API to reset json file and copy data from master file.
+stockRoutes.post('/reset', (req, res) => {
+  const masterfilePath = './data/stocks-master.json';
+  jsonReader(masterfilePath, (err, data) => {
+    if (err) {
+      console.log(err);
+      throw err;
+    } else {
+      jsonWriter(filePath, data);
+      res.status(200).send({
+        "msg": `Stock data updated!`
+      });
+    }
+  });
+});
+
 module.exports = stockRoutes;
