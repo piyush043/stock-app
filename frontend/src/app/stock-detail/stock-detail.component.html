@@ -1,4 +1,4 @@
-<div *ngIf="stock" class="margin-top-30">
+<section *ngIf="stock" class="detail-section">
   <div class="clr-row">
     <div class="clr-col-8">
       <span class="detail-header">Stock Detail</span>
@@ -10,35 +10,35 @@
   </div>
   
   <div class="clr-row">
-    <div class="clr-col-6">
+    <div class="clr-col-3">
       <span class="detail-label">Symbol</span>
     </div>
-    <div class="clr-col-6">
-      <span>{{stock.symbol}}</span>
+    <div class="clr-col-9">
+      <span class="detail-value">{{stock.symbol}}</span>
     </div>
   </div>
   <div class="clr-row">
-    <div class="clr-col-6">
+    <div class="clr-col-3">
       <span class="detail-label">Name</span>
     </div>
-    <div class="clr-col-6">
-      <span>{{stock.name}}</span>
+    <div class="clr-col-9">
+      <span class="detail-value">{{stock.name}}</span>
     </div>
   </div>
   <div class="clr-row">
-    <div class="clr-col-6">
+    <div class="clr-col-3">
       <span class="detail-label">Market Cap</span>
     </div>
-    <div class="clr-col-6">
-      <span>{{stock.market_cap | currency}}</span>
+    <div class="clr-col-9">
+      <span class="detail-value">{{stock.market_cap | currency}}</span>
     </div>
   </div>
   <div class="clr-row">
-    <div class="clr-col-6">
+    <div class="clr-col-3">
       <span class="detail-label">Tag</span>
     </div>
-    <div class="clr-col-6">
-      <span>{{stock.tag}}</span>
+    <div class="clr-col-9">
+      <span class="detail-value">{{stock.tag}}</span>
     </div>
   </div>
-</div>
+</section>
